@@ -11,10 +11,10 @@ int main()
 			std::cout << "cin a,b" << std::endl;
 		}
 		catch (std::runtime_error err) {
-			std::cout << err.what() << "\n try again? Enter y or n" << std::endl;   //ÎŞÂÛÊä²»ÊäÈëy£¬³ÌĞò×ÜÊÇÔÚÔËĞĞµÄ¡£ÕâÒ²ÊÇºóÃæÃ»ÓĞ´¦ÀíyµÄÔ­Òò
+			std::cout << err.what() << "\n try again? Enter y or n" << std::endl;   //æ— è®ºè¾“ä¸è¾“å…¥yï¼Œç¨‹åºæ€»æ˜¯åœ¨è¿è¡Œçš„ã€‚è¿™ä¹Ÿæ˜¯åé¢æ²¡æœ‰å¤„ç†yçš„åŸå› 
 			char c;
 			std::cin >> c;
-			if (!std::cin || c == 'n') { break; }    //·ÇcinÓĞÊ²Ã´ÓÃ£¿
+			if (!std::cin || c == 'n') { break; }    //écinæœ‰ä»€ä¹ˆç”¨ï¼Ÿ
 		}
 	}
 	
