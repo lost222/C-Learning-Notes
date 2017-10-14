@@ -1,0 +1,19 @@
+#include<iostream>
+#include<string>
+//详情见 http://www.cnblogs.com/flatfoosie/archive/2010/12/22/1914055.html
+
+int main()
+{
+	std::string os;
+	char s[20];
+	std::cout << "please input anything" << std::endl;
+	std::getline(std::cin, os);           //读取一行，第三个参数是结束于哪里，默认'\n'
+	std::cout << "for getline " << os << std::endl;
+	std::cout << "please input anything" << std::endl;
+	std::cin >> os;																//读取一个单词，'\n'和空格都会停止
+	std::cout << "for >> "<<os << std::endl;                        //>>不会在使用后中断cin，getline用完cin会刷新
+	std::cout << "please input anything" << std::endl;
+	std::cin.get(s,20);
+	std::cout << "for get " <<s<< std::endl;
+	return 0;
+}
