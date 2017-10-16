@@ -1,6 +1,6 @@
 #include<iostream>
 #include<string>
-#include<cctype>
+#include<cctype>           //其中有各种针对单个变量的判定函数，如下面的isalpha();
 using namespace std;
 int main()
 {
