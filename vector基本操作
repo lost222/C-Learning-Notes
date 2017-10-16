@@ -1,0 +1,31 @@
+#include<iostream>
+#include<vector>
+#include<string>
+using namespace std;
+//总而言之vector是动态数组
+//vector和string的=都重载过了，是深拷贝
+int main()
+{
+    vector<int>  intvec(10,23);     //初始元素十个，每个都是23
+    vector<int>   v2;
+    for(int i=0;i<100;i++)
+    {
+        v2.push_back(i);
+    }
+
+    for(auto i:v2)
+    {
+        cout<<i<<' ';
+    }
+    cout<<endl;
+    for(decltype(intvec.size()) i=0;i<10;i++)   //intvec.size()返回其大小，类型不确定是什么。。。int？decltype可以在编译的时候知道具体的type，需要再查。
+    {
+        intvec.push_back(2*i+1);
+    }
+
+    for(auto i:intvec)
+    {
+        cout<<i<<' ';
+    }
+    return 0;
+}
