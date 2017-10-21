@@ -8,7 +8,7 @@ template<typename T>
 class Young
 {
 public:
-    bool operator<(const Young&);
+    bool operator<(const Young&);                             //只需要重载 < 
     void output();
     Young(){};
     void set_(int x,const T& a);
@@ -43,7 +43,7 @@ int main()
     {
         (p+i)->set_(15-i,6);
     }
-    sort(p,p+12);
+    sort(p,p+12);                                                         //sort的区域是[p,p+12)
     for(int i=0;i<12;i++)
     {
         (p+i)->output();
