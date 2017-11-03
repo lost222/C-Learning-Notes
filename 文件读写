@@ -13,4 +13,4 @@ int main()
 		cout << n << endl << m<<endl;
 		ss.close();
 }
-//
+//http://blog.csdn.net/kingstar158/article/details/6859379
