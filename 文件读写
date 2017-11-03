@@ -1,0 +1,15 @@
+#include<ostream> 
+#include<fstream>
+int main()
+{
+    ofstream os;                    //注意是ofstream, 和库不一样，fstream对象不能创建文件，必须ofstream对象才行
+		os.open("D:\\john.txt");
+		if (!os.is_open()) { throw runtime_error("can't open the file."); }
+		os << n <<" "<< m;
+		os.close();
+		fstream ss;
+		ss.open("D:\\john.txt", ios::in | ios::out);
+		ss >> n >> m;
+		cout << n << endl << m<<endl;
+		ss.close();
+}
