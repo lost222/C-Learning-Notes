@@ -1,0 +1,51 @@
+#include<iostream>
+using namespace std;
+char a[50];
+char b[50];
+
+//在a中找到与b相同的子串，如果找到输出子串之前，如果没找到输出没找到
+//核心是两层循环不过写成match函数比较省脑子
+void outchars(char* s) {
+	while (*s!='\0')
+	{
+		cout << *s;
+		s++;
+		
+	}
+	cout << endl;
+}
+
+bool ismatch(char*A, char*B) {
+	bool flag = true;
+	while (*B!='\0')
+	{
+		if (*A != *B) {  flag = false; return false; }
+		A++; B++;
+	}
+	return flag;
+}
+
+int main()
+{
+	cout << "input A" << endl;
+	cin >> a;
+	cout << "input B" << endl;
+	cin >> b;
+	char*p = a + 1;
+	while (*p != '\0') {
+		if (ismatch(p, b)) { break; }            //仍然可以优化，后lenth（b）次的比较是多余的
+		p++;
+	}
+	if (*p == '\0') {
+		cout << "NOT FOUND" << endl;
+	}
+	else {
+		char* s = a;
+		while (*s!=*p)
+		{
+			cout << *s;
+			s++;
+		}
+	}
+
+}
