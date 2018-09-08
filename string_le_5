@@ -1,0 +1,32 @@
+//substr用法： 开始字母， 字串长度
+//可以配合find使用， 
+// std::size_t pos = str.find("live");      // position of "live" in str
+
+//  std::string str3 = str.substr (pos);     // get from "live" to the end
+
+class Solution {
+public:
+    int check_length(string s1, int left, int right){
+    while(left > -1 && right < s1.length() && s1[left]== s1[right]){
+        left--, right++;
+    }
+    return right - left - 1; // left 和 right 会停留在不符合条件的地方
+    }
+    
+    string longestPalindrome(string s) {
+        int center=0;
+        int max_le = 1;
+        for(int i=1; i<s.length(); i++){
+            int a = check_length(s, i, i);
+            int b = check_length(s, i, i-1);
+            int m_a_b = a < b ? b : a;
+            if(max_le < m_a_b){
+                center = i;
+                max_le = m_a_b;
+            }
+        }
+        int l = center - max_le / 2;
+        int r = l + max_le;
+        return s.substr(l, max_le);
+    }
+};
