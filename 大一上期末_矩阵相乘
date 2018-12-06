@@ -1,0 +1,65 @@
+#include<iostream>
+//题目二
+//		题目描述
+//用二维数组实现矩阵的乘法运算。
+//输入：
+//输入两个整数row1、col1（row1<10,col1<10），表示接下来的输入是一个row1*col1的矩阵；再输入两个整数row2、col2（row2<10,col2<10），表示接下来的输入是一个row2*col2的矩阵，两个矩阵肯定满足相乘的条件。
+//输出：
+//请对这两个矩阵实现乘法运算，并输出结果，结果格式是矩阵形式。
+//样例输入：
+//2 3
+//1 1 1
+//1 1 1
+//3 2
+//1 1
+//1 1
+//1 1
+//样例输出：
+//3 3
+//3 3
+
+
+// 写的太烂了， 说来是因为不会用数组指针
+int mul_arow_bcol(int row, int col, int a[][10], int b[][10], int len){
+	int sum =0;
+	for(int i=0; i< len ;i++){
+		sum += a[row][i] * b[i][col];
+	}
+	return sum;
+}
+
+
+
+
+
+int main(){
+	int a[10][10];
+	int b[10][10];
+
+	int row1,col1;
+	int row2,col2;
+	std::cin>>row1>>col1;
+	for(int i=0; i < row1; i++){
+		for (int j=0; j < col1; j++){
+			std::cin>>a[i][j];
+		}
+	}
+
+	std::cin>>row2>>col2;
+	for(int i=0; i<row2; i++){
+		for(int j=0; j<col2;j++){
+			std::cin>>b[i][j];
+		}
+	}
+
+	
+	for(int i=0; i< row1; i++){
+		for(int j=0; j<row1 ; j++){
+			std::cout<<mul_arow_bcol(i, j,a ,b ,col1)<<" ";
+		}
+		std::cout<<std::endl;
+	}
+
+	
+
+}
